@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diego Moreira - Elegância e Sofisticação</title>
+    <title>Diego Moreira - Elegância e Sofisticação | Boticário, Perfumes, Cestas e Chocolates</title>
+    <meta name="description" content="Revendedor oficial Boticário, perfumes importados, cestas personalizadas e chocolates finos. Elegância e sofisticação em cada detalhe.">
+    <meta name="keywords" content="Boticário, perfumes importados, cestas personalizadas, chocolates finos, Diego Moreira, revendedor">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -89,6 +91,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         section {
@@ -397,6 +400,220 @@
             margin-bottom: 1rem;
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--primary-color);
+            padding: 5rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            margin-bottom: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--secondary-color);
+            padding: 4rem 0;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .newsletter-input:focus {
+            outline: 2px solid var(--accent-color);
+        }
+
+        /* Newsletter Modal */
+        .newsletter-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .newsletter-modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--secondary-color);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent-color);
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .modal-message {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .modal-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .modal-btn-primary:hover {
+            background-color: #b8941f;
+            transform: translateY(-2px);
+        }
+
+        .modal-btn-secondary {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .modal-btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
         /* Footer */
         footer {
             background-color: #000;
@@ -463,6 +680,16 @@
             font-size: 0.9rem;
         }
 
+        .dev-credits {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .dev-link {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
         /* Floating WhatsApp Button */
         .floating-whatsapp {
             position: fixed;
@@ -498,6 +725,21 @@
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* Responsividade */
@@ -555,6 +797,22 @@
             .carousel-image {
                 height: 400px;
             }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                min-width: 100%;
+            }
+
+            .modal-content {
+                padding: 2rem;
+            }
+
+            .modal-buttons {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 576px) {
@@ -593,6 +851,10 @@
                 bottom: 1.5rem;
                 right: 1.5rem;
             }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -607,7 +869,7 @@
                     <li><a href="#home" class="nav-link">Início</a></li>
                     <li><a href="#about" class="nav-link">Sobre</a></li>
                     <li><a href="#products" class="nav-link">Produtos</a></li>
-                    <li><a href="#highlights" class="nav-link">Destaques</a></li>
+                    <li><a href="#testimonials" class="nav-link">Depoimentos</a></li>
                     <li><a href="#contact" class="nav-link">Contato</a></li>
                 </ul>
                 
@@ -645,7 +907,7 @@
                     <p>Meu compromisso é proporcionar uma experiência única, com produtos que encantam e surpreendem, sempre com atendimento personalizado e entrega ágil.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://i.ibb.co/PsdhdBrv/Design-sem-nome-8.png" alt="Diego Moreira - Produtos">
+                    <img src="https://i.ibb.co/PsdhdBrv/Design-sem-nome-8.png" alt="Diego Moreira - Produtos" loading="lazy">
                 </div>
             </div>
         </div>
@@ -659,49 +921,49 @@
             <div class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://i.ibb.co/F4NgSVPz/adobe-photoshop-pdf.jpg" alt="Perfumes Importados" class="carousel-image">
+                        <img src="https://i.ibb.co/F4NgSVPz/adobe-photoshop-pdf.jpg" alt="Perfumes Importados" class="carousel-image" loading="lazy">
                         <div class="carousel-caption">
                             <h3>Perfumes Importados</h3>
                             <p>Fragrâncias exclusivas e sofisticadas das melhores marcas internacionais.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://i.ibb.co/Z1WFsh6h/produto-de-beleza-monocromatico-para-cuidados-com-pele.jpg" alt="Produtos Boticário" class="carousel-image">
+                        <img src="https://i.ibb.co/Z1WFsh6h/produto-de-beleza-monocromatico-para-cuidados-com-pele.jpg" alt="Produtos Boticário" class="carousel-image" loading="lazy">
                         <div class="carousel-caption">
                             <h3>Produtos Boticário</h3>
                             <p>Cosméticos e produtos de beleza da marca brasileira mais querida.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://i.ibb.co/xt31FGQ2/frutos-secos-e-nozes-em-saco-de-madeira-com-garrafa-de-vinho.jpg" alt="Cestas Personalizadas" class="carousel-image">
+                        <img src="https://i.ibb.co/xt31FGQ2/frutos-secos-e-nozes-em-saco-de-madeira-com-garrafa-de-vinho.jpg" alt="Cestas Personalizadas" class="carousel-image" loading="lazy">
                         <div class="carousel-caption">
                             <h3>Cestas Personalizadas</h3>
                             <p>Presentes únicos e personalizados para todas as ocasiões especiais.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://i.ibb.co/Fb6vSQns/vista-superior-conceito-de-chocolate-com-espaco-de-copia.jpg" alt="Chocolates Finos" class="carousel-image">
+                        <img src="https://i.ibb.co/Fb6vSQns/vista-superior-conceito-de-chocolate-com-espaco-de-copia.jpg" alt="Chocolates Finos" class="carousel-image" loading="lazy">
                         <div class="carousel-caption">
-                            <h3>Chocolates </h3>
-                            <p>Deliciosos chocolates premium.</p>
+                            <h3>Chocolates Finos</h3>
+                            <p>Deliciosos chocolates premium para os paladares mais exigentes.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="carousel-controls">
-                    <button class="carousel-control prev">
+                    <button class="carousel-control prev" aria-label="Slide anterior">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button class="carousel-control next">
+                    <button class="carousel-control next" aria-label="Próximo slide">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
                 
                 <div class="carousel-indicators">
-                    <span class="carousel-indicator active"></span>
-                    <span class="carousel-indicator"></span>
-                    <span class="carousel-indicator"></span>
-                    <span class="carousel-indicator"></span>
+                    <span class="carousel-indicator active" aria-label="Slide 1"></span>
+                    <span class="carousel-indicator" aria-label="Slide 2"></span>
+                    <span class="carousel-indicator" aria-label="Slide 3"></span>
+                    <span class="carousel-indicator" aria-label="Slide 4"></span>
                 </div>
             </div>
         </div>
@@ -740,6 +1002,68 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="text-center">O Que Nossos Clientes Dizem</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Comprei uma cesta personalizada para minha mãe e ela amou! A qualidade dos produtos é excelente e o atendimento foi impecável.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Maria Silva</h4>
+                            <p>Cliente há 2 anos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Os perfumes importados são originais e com preços justos. Sempre recomendo o Diego para minhas amigas!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>João Santos</h4>
+                            <p>Cliente há 1 ano</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Atendimento personalizado e produtos de alta qualidade. Minha experiência com as cestas de chocolate foi maravilhosa!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Ana Costa</h4>
+                            <p>Cliente há 6 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Receba Novidades e Promoções</h2>
+                <p>Cadastre-se para receber ofertas exclusivas e novidades sobre nossos produtos.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required id="emailInput">
+                    <button type="submit" class="btn btn-primary" id="newsletterSubmit">
+                        <span id="submitText">Cadastrar</span>
+                        <div class="loading" id="loading" style="display: none;"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
@@ -748,13 +1072,13 @@
                     <div class="footer-logo">Diego Moreira</div>
                     <p>Elegância e sofisticação em cada detalhe. Seu revendedor de confiança para produtos de beleza e presentes especiais.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/diegomoreirah/" class="social-link" target="_blank">
+                        <a href="https://www.instagram.com/diegomoreirah/" class="social-link" target="_blank" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/5542998618040?text=Olá, vim através do site. Gostaria de saber mais sobre seus produtos." class="social-link" target="_blank">
+                        <a href="https://wa.me/5542998618040?text=Olá, vim através do site. Gostaria de saber mais sobre seus produtos." class="social-link" target="_blank" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="https://www.facebook.com/diego.moreira.514757?locale=pt_BR" class="social-link" target="_blank">
+                        <a href="https://www.facebook.com/diego.moreira.514757?locale=pt_BR" class="social-link" target="_blank" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
@@ -766,17 +1090,17 @@
                         <li><a href="#home">Início</a></li>
                         <li><a href="#about">Sobre</a></li>
                         <li><a href="#products">Produtos</a></li>
-                        <li><a href="#highlights">Destaques</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Produtos</h4>
                     <ul>
-                        <li><a href="#">Perfumes Importados</a></li>
-                        <li><a href="#">Produtos Boticário</a></li>
-                        <li><a href="#">Cestas Personalizadas</a></li>
-                        <li><a href="#">Chocolates Finos</a></li>
+                        <li><a href="#products">Perfumes Importados</a></li>
+                        <li><a href="#products">Produtos Boticário</a></li>
+                        <li><a href="#products">Cestas Personalizadas</a></li>
+                        <li><a href="#products">Chocolates Finos</a></li>
                     </ul>
                 </div>
                 
@@ -785,19 +1109,40 @@
                     <ul>
                         <li><i class="fas fa-phone"></i> (42) 99861-8040</li>
                         <li><i class="fas fa-envelope"></i> contato@diegomoreira.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Telêmaco Borba - PR, Brasil </li>
+                        <li><i class="fas fa-map-marker-alt"></i> Telêmaco Borba - PR, Brasil</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
                 <p>&copy; 2025 Diego Moreira. Todos os direitos reservados.</p>
+                <p class="dev-credits">Desenvolvido por <a href="https://portifoliogeovani.netlify.app/" target="_blank" class="dev-link">Geovani Neumann</a>.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Newsletter Modal -->
+    <div class="newsletter-modal" id="newsletterModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-icon" id="modalIcon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="modal-title" id="modalTitle">Cadastro Realizado!</h3>
+            <p class="modal-message" id="modalMessage">Seu e-mail foi cadastrado com sucesso! Em breve você receberá nossas melhores ofertas.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-primary" id="whatsappBtn">
+                    <i class="fab fa-whatsapp"></i> Falar com Diego
+                </button>
+                <button class="modal-btn modal-btn-secondary" id="closeModalBtn">
+                    Continuar Navegando
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5542998618040?text=Olá, vim através do site. Gostaria de saber mais sobre seus produtos." class="floating-whatsapp" target="_blank">
+    <a href="https://wa.me/5542998618040?text=Olá, vim através do site. Gostaria de saber mais sobre seus produtos." class="floating-whatsapp" target="_blank" aria-label="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -888,6 +1233,169 @@
         carousel.addEventListener('mouseleave', () => {
             slideInterval = setInterval(nextSlide, 5000);
         });
+
+        // Newsletter System
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterSubmit = document.getElementById('newsletterSubmit');
+        const submitText = document.getElementById('submitText');
+        const loading = document.getElementById('loading');
+        const emailInput = document.getElementById('emailInput');
+        const newsletterModal = document.getElementById('newsletterModal');
+        const closeModal = document.getElementById('closeModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalIcon = document.getElementById('modalIcon');
+
+        // Array para armazenar os emails localmente
+        let leads = JSON.parse(localStorage.getItem('diegomoreira_leads')) || [];
+
+        newsletterForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            
+            if (!isValidEmail(email)) {
+                showModal('E-mail Inválido', 'Por favor, insira um endereço de e-mail válido.', 'error');
+                return;
+            }
+            
+            // Verificar se email já existe
+            if (leads.includes(email)) {
+                showModal('E-mail Já Cadastrado', 'Este e-mail já está em nossa lista. Obrigado!', 'info');
+                newsletterForm.reset();
+                return;
+            }
+            
+            // Show loading state
+            submitText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            newsletterSubmit.disabled = true;
+            
+            try {
+                // Simular processamento
+                await processLead(email);
+                
+                // Adicionar ao array local
+                leads.push(email);
+                localStorage.setItem('diegomoreira_leads', JSON.stringify(leads));
+                
+                // Mostrar modal de sucesso
+                showModal(
+                    'Cadastro Realizado!', 
+                    `O e-mail <strong>${email}</strong> foi cadastrado com sucesso! Em breve você receberá nossas melhores ofertas.`,
+                    'success'
+                );
+                
+                newsletterForm.reset();
+                
+            } catch (error) {
+                showModal('Erro no Cadastro', 'Houve um problema ao cadastrar seu e-mail. Tente novamente.', 'error');
+            } finally {
+                submitText.style.display = 'inline-block';
+                loading.style.display = 'none';
+                newsletterSubmit.disabled = false;
+            }
+        });
+
+        // Função para validar email
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Função para processar lead
+        function processLead(email) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // Simula processamento bem-sucedido
+                    const success = Math.random() > 0.1; // 90% de sucesso
+                    if (success) {
+                        resolve();
+                    } else {
+                        reject(new Error('Falha no processamento'));
+                    }
+                }, 1500);
+            });
+        }
+
+        // Função para mostrar modal
+        function showModal(title, message, type = 'success') {
+            modalTitle.textContent = title;
+            modalMessage.innerHTML = message;
+            
+            // Alterar ícone baseado no tipo
+            const iconElement = modalIcon.querySelector('i');
+            if (type === 'error') {
+                iconElement.className = 'fas fa-exclamation-circle';
+                iconElement.style.color = '#e74c3c';
+            } else if (type === 'info') {
+                iconElement.className = 'fas fa-info-circle';
+                iconElement.style.color = '#3498db';
+            } else {
+                iconElement.className = 'fas fa-check-circle';
+                iconElement.style.color = '#d4af37';
+            }
+            
+            newsletterModal.classList.add('active');
+        }
+
+        // Fechar modal
+        function closeNewsletterModal() {
+            newsletterModal.classList.remove('active');
+        }
+
+        // Event listeners para fechar modal
+        closeModal.addEventListener('click', closeNewsletterModal);
+        closeModalBtn.addEventListener('click', closeNewsletterModal);
+        
+        // Fechar modal clicando fora
+        newsletterModal.addEventListener('click', (e) => {
+            if (e.target === newsletterModal) {
+                closeNewsletterModal();
+            }
+        });
+
+        // Botão do WhatsApp no modal
+        whatsappBtn.addEventListener('click', () => {
+            const email = emailInput.value.trim() || 'Não informado';
+            const message = `📧 NOVO CADASTRO NO SITE 📧\n\nE-mail: ${email}\nData: ${new Date().toLocaleString('pt-BR')}\n\nCliente quer receber novidades e promoções!`;
+            const whatsappUrl = `https://wa.me/5542998618040?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            closeNewsletterModal();
+        });
+
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Mostrar modal automaticamente após alguns segundos (opcional)
+        setTimeout(() => {
+            const hasSeenModal = localStorage.getItem('diegomoreira_modal_seen');
+            if (!hasSeenModal && leads.length === 0) {
+                showModal(
+                    'Receba Ofertas Exclusivas!',
+                    'Cadastre seu e-mail e seja o primeiro a saber sobre novidades e promoções especiais dos produtos Diego Moreira.',
+                    'info'
+                );
+                localStorage.setItem('diegomoreira_modal_seen', 'true');
+            }
+        }, 10000); // Após 10 segundos
     </script>
 </body>
 </html>
